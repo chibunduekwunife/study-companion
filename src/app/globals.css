@@ -1,0 +1,52 @@
+
+@import "tailwindcss";
+
+:root {
+  /* Base colors */
+  --background: #ffffff;       /* White background */
+  --foreground: #000000;       /* Black text */
+  --primary: #3b82f6;          /* Blue primary color */
+  --secondary: #6d6d6d;
+
+  /* Your custom colors */
+  --stats-correct: #4ad66d;    /* Green for correct answers */
+  --stats-incorrect: #ef233c;  /* Red for incorrect */
+  --stats-partial: #ffd166;    /* Yellow for partially correct */
+
+  --difficulty-easy: #38b000;  /* Green for easy */
+  --difficulty-medium: #ffaa00;/* Yellow for medium */
+  --difficulty-hard: #ef233c;  /* Red for hard */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-correct: var(--stats-correct);
+  --color-incorrect: var(--stats-incorrect);
+  --color-partial: var(--stats-partial);
+  --color-easy: var(--difficulty-easy);
+  --color-medium: var(--difficulty-medium);
+  --color-hard: var(--difficulty-hard);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+button {
+  @apply bg-gradient-to-br from-blue-700 to-primary text-background py-5
+  px-6 rounded-sm font-bold shadow-lg cursor-pointer;
+}
+
+select, input {
+  @apply p-5 rounded-sm border-1 appearance-none;
+}
+
+h1 {
+  @apply text-7xl font-bold;
+}
+
